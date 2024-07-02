@@ -1,9 +1,12 @@
-pipeline{
-    agent any
-    stages{
-        steps('debut devops')
-        {
-              echo 'hello devops'  
+pipeline {
+  agent any
+  stages {
+    stage('debut devops') {
+      steps {
+        script {
+          echo 'hello devops'
         }
+      }
     }
+  }
 }
