@@ -1,0 +1,30 @@
+<h1>Liste des étudiants</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Image</th>
+        <th scope="col">Matricule </th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Date de Naissance</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Address</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students; let i=index">
+        <td scope="row">{{i+1}}</td>
+        <td><img [alt]="student.id" [src]="student.picture"/></td>
+        <td scope="row">{{student.matricule}}</td>
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+        <td>{{student.dateOfBirth}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.address}}</td>
+        <td><button (click)="getDetail(student.id)">détail</button> <button >modifier</button> <button (click)="DeleteStudent(student.id)">supprimer</button> </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,42 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="{{ picture }}" alt="Profile Picture" class="card-img-top profile-picture">
+                <div class="card-body">
+                    <h5 class="card-title">{{ firstName }} {{ lastName }}</h5>
+                    <p class="card-text">Student ID: {{ studentId }}</p>
+                    <p class="card-text">Matriculation: {{ matricule }}</p>
+                    <p class="card-text">Date of Birth: {{ dateOfBirth | date:'longDate' }}</p> <p class="card-text">Place of Birth: {{ place }}</p>
+                    <p class="card-text">Gender: {{ gender }}</p>
+                    <p class="card-text">Address: {{ address }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Education
+                </div>
+                <div class="card-body">
+                    <p>**Previous School:**</p>
+                    <ul *ngIf="previousSchoolId"> <li>
+                            </li>
+                    </ul>
+                    <p *ngIf="!previousSchoolId">No previous school information available.</p> </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">
+                    Skills
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Skill 1</li>
+                        <li>Skill 2</li>
+                        </ul>
+                </div>
+            </div>
+            </div>
+    </div>
+    <button (click)="returnList()">Retour</button>
+</div>
