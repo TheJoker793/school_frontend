@@ -8,5 +8,13 @@ pipeline {
         }
       }
     }
+    stage('Build docker image'){
+        steps{
+            script{
+                echo 'coming soon'    
+            }
+            
+        }
+    }
   }
 }
