@@ -10,3 +10,17 @@ export interface Student{
     picture:string,
     previousSchoolId?:number
 }
+
+export interface Professor{
+  id?: number,
+  firstName: string,
+  lastName: string,
+  dateOfBirth: Date,
+  place: string,
+  email: string,
+  mobile: string,
+  gender: string,
+  address: string
+  
+
+}

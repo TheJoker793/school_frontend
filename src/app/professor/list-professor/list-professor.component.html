@@ -1,1 +1,30 @@
-<p>list-professor works!</p>
+<h1>Liste de professeurs</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Date de Naissance</th>
+        <th scope="col">Lieu</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Address</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prof of professors;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{prof.firstName}}</td>
+        <td>{{prof.lastName}}</td>
+        <td>{{prof.gender}}</td>
+        <td>{{prof.dateOfBirth}}</td>
+        <td>{{prof.place}}</td>
+        <td>{{prof.email}}</td>
+        <td>{{prof.mobile}}</td>
+        <td>{{prof.address}}</td>
+        <td><button (click)="getDetail(prof)">detail</button> <button>modifier</button> <button>supprimer</button></td>
+      </tr>
+    </tbody>
+  </table>
