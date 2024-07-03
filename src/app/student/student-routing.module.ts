@@ -26,10 +26,10 @@ const routes: Routes = [
         component:DetailStudentComponent
       },
      
-     /* {
+      {
         path:'update/:id',
         component:UpdateStudentComponent
-      }*/
+      }
     ]
   }
 ];

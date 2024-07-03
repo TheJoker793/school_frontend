@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-professor',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './add-professor.component.css'
 })
 export class AddProfessorComponent {
+  
 
 }

@@ -33,5 +33,9 @@ export class ListStudentComponent implements OnInit{
       
     )
   }
+  goToUpdate(id:any){
+    this.router.navigate(["students/update",id])
+
+  }
 
 }

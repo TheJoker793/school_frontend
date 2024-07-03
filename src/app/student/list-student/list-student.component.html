@@ -24,7 +24,10 @@
         <td>{{student.dateOfBirth}}</td>
         <td>{{student.gender}}</td>
         <td>{{student.address}}</td>
-        <td><button (click)="getDetail(student.id)">détail</button> <button >modifier</button> <button (click)="DeleteStudent(student.id)">supprimer</button> </td>
+        <td><button (click)="getDetail(student.id)">détail</button> 
+          <button (click)="goToUpdate(student.id)" >modifier</button> 
+          <button (click)="DeleteStudent(student.id)">supprimer</button> 
+        </td>
       </tr>
     </tbody>
   </table>
