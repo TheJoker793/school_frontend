@@ -12,19 +12,19 @@ export class ProfessorService {
   constructor(private http:HttpClient) { }
 
   getAllProfessors(){
-  return this.http.get<Professor[]>(this.baseUrl+'professors')
+  return this.http.get<Professor[]>(this.baseUrl+'Professeurs/')
 }
   getProfessorById(id:any){
 
-return this.http.get<Professor>(this.baseUrl+'professors/'+id);
+return this.http.get<Professor>(this.baseUrl+'Professeurs/'+id);
 }
   addProfessor(prof:Professor){
-return this.http.post<Professor>(this.baseUrl+'professors/',prof);
+return this.http.post<Professor>(this.baseUrl+'Professeurs/',prof);
 }
   updateProfessor(id:number,prof:Professor){
-return this.http.put<Professor>(this.baseUrl+'professors/'+id,prof);
+return this.http.put<Professor>(this.baseUrl+'Professeurs/'+id,prof);
   }
   deleteProfessor(id:number){
-   return this.http.delete(this.baseUrl+'professors/'+id);
+   return this.http.delete(this.baseUrl+'Professeurs/'+id);
   }
 }
