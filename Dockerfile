@@ -5,4 +5,4 @@ RUN npm install
 COPY . .
 RUN npm run build --prod
 FROM nginx:latest
-COPY --from=build /app/dist/fontend-school/browser/* /usr/share/nginx/html/ 
+COPY --from=build /app/dist/frontend-school/browser/* /usr/share/nginx/html/ 
