@@ -4,6 +4,8 @@
       <tr>
         <th scope="col">Ord</th>
         <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        
         <th scope="col">Genre</th>
         <th scope="col">Date de Naissance</th>
         <th scope="col">Lieu</th>
@@ -24,7 +26,7 @@
         <td>{{prof.email}}</td>
         <td>{{prof.mobile}}</td>
         <td>{{prof.address}}</td>
-        <td><button (click)="getDetail(prof)">detail</button> <button>modifier</button> <button>supprimer</button></td>
+        <td><button (click)="getDetail(prof)">detail</button> <button (click)="goToUpdate(prof.id)">modifier</button> <button (click)="deleteProfessor(prof)">supprimer</button></td>
       </tr>
     </tbody>
   </table>

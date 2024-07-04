@@ -25,7 +25,15 @@ export class ListProfessorComponent implements OnInit {
     
   }
   deleteProfessor(prof:any){
-    this.professorService.deleteProfessor(prof.id).subscribe()
+    this.professorService.deleteProfessor(prof.id).subscribe(
+      ()=>{
+        console.log("this professor is deleted successfully");
+        
+      }
+    )
+  }
+  goToUpdate(id:any){
+    this.router.navigate(["professors/update",id])
   }
 
 }

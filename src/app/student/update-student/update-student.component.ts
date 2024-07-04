@@ -42,7 +42,7 @@ export class UpdateStudentComponent implements OnInit {
           id: new FormControl(data.id), 
           matricule: new FormControl(data.matricule, ),
           firstName: new FormControl(data.firstName, ),
-          lastName: new FormControl(data.lastName, ),
+          lastName: new FormControl(data.lastName, ), 
           dateOfBirth: new FormControl(data.dateOfBirth),
           place: new FormControl(data.place, ),
           gender: new FormControl(data.gender),
