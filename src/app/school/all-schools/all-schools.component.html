@@ -1,0 +1,24 @@
+<h1>Liste des écoles étrangères</h1> 
+<button (click)="addSchool()">Ajouter nouvelle école</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Nom école</th>
+        <th scope="col">Type</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let school of schools;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{school.name}}</td>
+        <td>{{school.type}}</td>
+        <td>{{school.status}}</td>
+        <td><button (click)="goToUpdate(school.id)">modifier</button> <button (click)="deleteSchool(school.id)">supprimer</button> </td>
+      </tr>
+      
+      
+    </tbody>
+  </table>

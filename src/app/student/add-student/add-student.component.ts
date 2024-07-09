@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { StudentService } from '../../services/student.service';
 import { Router } from '@angular/router';
+import { PreviousSchool } from '../../models/Models';
+import { PreviousShoolService } from '../../services/previous-shool.service';
 
 @Component({
   selector: 'app-add-student',
   templateUrl: './add-student.component.html',
   styleUrl: './add-student.component.css'
 })
-export class AddStudentComponent {
+export class AddStudentComponent implements OnInit {
+  schools:PreviousSchool[]=[];
   matriculeControle:FormControl
   FirstNameControle:FormControl;
   lastNameConrole:FormControl;
@@ -20,7 +23,12 @@ export class AddStudentComponent {
   previousSchoolIdControl:FormControl;
   studentForm:FormGroup
   
-  constructor(fb:FormBuilder,private studentService:StudentService,private router:Router){
+  constructor(
+    fb:FormBuilder,
+    private studentService:StudentService,
+    private schoolService:PreviousShoolService,
+    private router:Router
+  ){
     this.matriculeControle=fb.control('',Validators.required);
     this.FirstNameControle=fb.control('',Validators.required);
     this.lastNameConrole=fb.control('',Validators.required);
@@ -41,7 +49,20 @@ export class AddStudentComponent {
       picture:this.pictureControle,
       previousSchoolId:this.previousSchoolIdControl
     })
+  }
+  ngOnInit(): void {
+    this.allSchools();
   };
+  allSchools(){
+    this.schoolService.getAllSchools().subscribe(
+      (data)=>{
+        this.schools=data;
+        console.log(this.schools);
+        
+      }
+    )
+  }
+
   addStudent(){
     console.log(this.studentForm.value);
     

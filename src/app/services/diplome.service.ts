@@ -10,18 +10,18 @@ export class DiplomeService {
 
   constructor(private http:HttpClient) { }
   getAllDiplome(){
-    return this.http.get<Diplome[]>(environment.baseUrl+'Classes/');
+    return this.http.get<Diplome[]>(environment.baseUrl+'Diplomes/');
   }
   getDiplomeById(id:number){
-    return this.http.get<Diplome>(environment.baseUrl+'Classes/'+id);
+    return this.http.get<Diplome>(environment.baseUrl+'Diplomes/'+id);
   }
   addDiplome(diplome:Diplome){
-    return this.http.post<Diplome>(environment.baseUrl+'Classes/',diplome);
+    return this.http.post<Diplome>(environment.baseUrl+'Diplomes/',diplome);
   }
   updateDiplome(id:number,diplome:Diplome){
-    return this.http.put<Diplome>(environment.baseUrl+'Classes/'+id,diplome);
+    return this.http.put<Diplome>(environment.baseUrl+'Diplomes/'+id,diplome);
   }
   deleteDiplome(id:number){
-    return this.http.delete(environment.baseUrl+'Classes/'+id)
+    return this.http.delete(environment.baseUrl+'Diplomes/'+id)
   }
 }

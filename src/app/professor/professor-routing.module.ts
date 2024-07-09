@@ -20,6 +20,10 @@ const routes: Routes = [
         component:ListProfessorComponent
       },
       {
+        path:'diplome',
+        loadChildren:()=>import('../diplome/diplome.module').then(d=>d.DiplomeModule)
+      },
+      {
         path:'update/:id',
         component:UpdateProfessorComponent
       },

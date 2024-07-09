@@ -16,6 +16,8 @@ export class AssiduiteService {
     return this.http.get<Assiduite>(environment.baseUrl+'Assiduites/'+id)
   }
   addAssiduite(assiduite:Assiduite){
+    console.log("service:",assiduite);
+    
     return this.http.post<Assiduite>(environment.baseUrl+'Assiduites/',assiduite)
   }
   updateAssiduite(id:number,assiduite:Assiduite){

@@ -8,6 +8,8 @@ import { ListStudentComponent } from './list-student/list-student.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
 import { DetailStudentComponent } from './detail-student/detail-student.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SchoolModule } from '../school/school.module';
+import { AssiduiteModule } from '../assiduite/assiduite.module';
 
 
 @NgModule({
@@ -16,13 +18,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddStudentComponent,
     ListStudentComponent,
     UpdateStudentComponent,
-    DetailStudentComponent
+    DetailStudentComponent,
+    
   ],
   imports: [
     
     CommonModule,
     StudentRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SchoolModule,
+    AssiduiteModule
   ]
 })
 export class StudentModule { }

@@ -2,7 +2,7 @@
 <form (ngSubmit)="addStudent()" [formGroup]="studentForm" >
 <div>
     <label class="form-label">Matricule:</label>
-    <input class="form-control" formControlName="matricule"/>
+    <input class="form-control" [value]="" formControlName="matricule"/>
 </div>
 
 <div>
@@ -37,7 +37,12 @@
 </div>
 <div>
     <label class="form-label">Previous school:</label>
-    <input type="text" class="form-control" formControlName="previousSchoolId">
+    <select class="form-select" formControlName="previousSchoolId">
+        <option selected>Selectionner l'école</option>
+        <option *ngFor="let school of schools" [value]="school.id">{{school.name}}</option>
+
+
+    </select>
 
 </div>
 <div>

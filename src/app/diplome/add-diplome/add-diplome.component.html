@@ -1,0 +1,57 @@
+<h1>Ajouter diplome pour Professeur</h1>
+<form (ngSubmit)="ajoutDiplome()" [formGroup]="diplomeForme" >
+    <div class="row">
+        <form class="form-group" [formGroup]="profForm"  (ngSubmit)="ajoutDiplome()">
+    <div class="row">             
+        <div class="col col-md-6">
+            <label class="label" >Identifiant professeur</label>
+            <input class="form-control" id="studentId" (change)="onChangeProfessorId($event)" />  
+        </div> 
+    </div>
+    <div class="row">             
+        <div class="col col-md-6">
+            <label class="label">Prénom</label>
+            <input class="form-control" formControlName="firstName" />  
+        </div>
+        <div class="col col-md-6">
+            <label class="label">Nom</label>
+            <input class="form-control" formControlName="lastName" />  
+        </div>
+    </div>  
+
+        </form>
+    </div>
+    
+<div class="row">
+    <div class="col col-md-6">
+        <label>Intitule:</label>
+        <input class="form-control" formControlName="name"/>
+    </div>
+    <div class="col col-md-6">
+        <label>Ecole:</label>
+        <input class="form-control" formControlName="ecole"/>
+    </div>
+<div class="row">
+    <div class="col col-md-6 col-sm-12">
+        <label>Niveau</label>
+    <select class="form-select" aria-label="Default select example" formControlName="niveau">
+        <option selected>Open this select menu</option>
+        <option value="Licence Applique">Licence Applique</option>
+        <option value="Licence Fondamental">Licence Fondamental</option>
+        <option value="Master professionnel">Master professionnel</option>
+        <option value="Master Recherche">Master Recherche</option>
+        <option value="Maitrise">Maitrise</option>
+        <option value="Ingenieurie">Ingenieurie</option>
+        <option value="Doctorat">Doctorat</option>
+      </select>
+    </div>
+    <div class="col col-md-6 col-sm-12">
+        <label>Date Obtenir:</label>
+        <input type="date" class="form-control" formControlName="dateObtenir"/>
+    </div>
+</div>    
+
+
+ </div>   
+ <button class=" btn btn-success" type="submit">Ajouter</button>
+</form>

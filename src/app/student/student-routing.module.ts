@@ -22,6 +22,14 @@ const routes: Routes = [
         component:ListStudentComponent
       },
       {
+        path:'schools',
+        loadChildren:()=>import('../school/school.module').then(s=>s.SchoolModule)
+      },
+      {
+        path:'discipline',
+        loadChildren:()=>import('../assiduite/assiduite.module').then(a=>a.AssiduiteModule)
+      },
+      {
         path:':id',
         component:DetailStudentComponent
       },
@@ -29,7 +37,8 @@ const routes: Routes = [
       {
         path:'update/:id',
         component:UpdateStudentComponent
-      }
+      },
+      
     ]
   }
 ];

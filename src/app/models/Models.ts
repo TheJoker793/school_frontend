@@ -10,6 +10,12 @@ export interface Student{
     picture:string,
     previousSchoolId?:number
 }
+export interface PreviousSchool{
+  id?:number,
+  name:string,
+  type:string,
+  status:string
+}
 
 export interface Professor{
   id?: number,
@@ -87,10 +93,12 @@ export interface Emploi{
 }
 export interface Assiduite{
   id?:number,
-  heureDebut:string,
-  heureFin:string,
-  dateAbcense:string,
+  dateDebut:string,
+  dateFin:string,
+  dateAssiduite:string,
+  type:string,
   motif:string,
+  conditionTenir:string,
   studentId:number
 }
 export interface AnneeScolaire{

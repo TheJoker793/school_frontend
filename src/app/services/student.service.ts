@@ -23,5 +23,5 @@ baseUrl:string="https://localhost:7020/api/"
   }
   DeleteStudent(id:number){
     return this.http.delete(this.baseUrl+"Students/"+id)
-  }
+  } 
 }

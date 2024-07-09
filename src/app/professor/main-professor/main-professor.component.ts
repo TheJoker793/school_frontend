@@ -16,5 +16,8 @@ export class MainProfessorComponent {
   goToList(){
     this.router.navigate(['professors/list']);
   }
+  goToDiplomes(){
+    this.router.navigate(['professors/diplome']);
+  }
 
 }

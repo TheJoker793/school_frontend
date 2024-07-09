@@ -8,6 +8,7 @@ import { AddProfessorComponent } from './add-professor/add-professor.component';
 import { DetailProfessorComponent } from './detail-professor/detail-professor.component';
 import { UpdateProfessorComponent } from './update-professor/update-professor.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DiplomeModule } from '../diplome/diplome.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ProfessorRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DiplomeModule
   ]
 })
 export class ProfessorModule { }

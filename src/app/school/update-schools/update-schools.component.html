@@ -1,0 +1,27 @@
+<h1>Mettre à jour l'ecole</h1>
+
+<form  (ngSubmit)="conFirmUpdate()" [formGroup]="schoolForm">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Nom de l'école</label>
+      <input type="text" class="form-control" formControlName="name" >
+    </div>
+    <div class="mb-3">
+      <label for="type" class="form-label">Type de l'école</label>
+      <select class="form-select" formControlName="type">
+        <option value="type">Choisir type</option>
+        <option value="Primère">Primère</option>
+        <option value="Secondaire">Secondaire</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-select" formControlName="status">
+          <option value="status">Choisir status</option>
+          <option value="etatique">étatique</option>
+          <option value="privé">Privé</option>
+        </select>
+      </div>
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+  </form>

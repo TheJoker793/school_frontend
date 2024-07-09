@@ -1,0 +1,27 @@
+<h1>List des diplomes</h1>
+<button type="button" class="btn btn-primary" (click)="addDiplome()">Ajouter</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Intitule</th>
+        <th scope="col">Niveau</th>
+        <th scope="col">Ecole</th>
+        <th scope="col">Date Obtention</th>
+        <th scope="col">Id Professeur</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let diplome of diplomes;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{diplome.name}}</td>
+        <td>{{diplome.niveau}}</td>
+        <td>{{diplome.ecole}}</td>
+        <td>{{diplome.dateObtenir}}</td>
+        
+        <td>{{diplome.professeurId}}</td>
+        <td><button (click)="goToUpdate(diplome)">update</button> <button (click)="deleteDiplome(diplome)">delete</button></td>
+      </tr>
+    </tbody>
+  </table>

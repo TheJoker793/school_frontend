@@ -1,0 +1,27 @@
+<h1>liste des retard/absence</h1>
+<button (click)="goToAdd()" >Ajouter nouvelle assiduité</button>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Date</th>
+        <th scope="col">Heure debut</th>
+        <th scope="col">Heure fin</th>
+        <th scope="col">Motif</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let assiduite of assiduites ;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{assiduite.dateAssiduite}}</td>
+        <td>{{assiduite.dateDebut}} </td>
+        <td>{{assiduite.dateFin}}</td>
+        <td>{{assiduite.motif}}</td>
+        <td><button (click)="goToUpdate(assiduite)" >modifier</button> <button (click)="deleteAssiduite(assiduite)" >supprimer</button> </td>
+      </tr>
+      
+      
+    </tbody>
+  </table>

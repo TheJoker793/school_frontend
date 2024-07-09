@@ -16,8 +16,11 @@ export class MainStudentComponent {
   goToList(){
     this.router.navigate(["students/list"])
   }
-  getDetail(){
-    
+  goToSchools(){
+    this.router.navigate(["students/schools"])
+  }
+  goToDiscipline(){
+    this.router.navigate(['students/discipline'])
   }
 
 }

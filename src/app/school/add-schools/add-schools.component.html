@@ -1,0 +1,28 @@
+<h1>Ajouter nouvelle école</h1>
+<button (click)="retouner()">Retour à la liste</button>
+
+<form  (ngSubmit)="ajouter()" [formGroup]="SchoolForm">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Nom de l'école</label>
+      <input type="text" class="form-control" formControlName="name" >
+    </div>
+    <div class="mb-3">
+      <label for="type" class="form-label">Type de l'école</label>
+      <select class="form-select" formControlName="type">
+        <option value="">Choisir type</option>
+        <option value="Primère">Primère</option>
+        <option value="Secondaire">Secondaire</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-select" formControlName="status">
+          <option value="">Choisir status</option>
+          <option value="etatique">étatique</option>
+          <option value="privé">Privé</option>
+        </select>
+      </div>
+    <button type="submit" class="btn btn-primary">Add Professor</button>
+  </form>

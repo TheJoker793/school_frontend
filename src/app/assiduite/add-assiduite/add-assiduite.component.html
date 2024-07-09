@@ -1,0 +1,69 @@
+<h1>Ajouter absence pour étudiant</h1>
+<form  class="form-group" [formGroup]="assiduiteForm" (ngSubmit)="addAssiduite()">
+    <input id="studentId" class="form-control mb-3" (change)="onChangeStudentId($event)">
+    <form class="form-group" [formGroup]="studentForm">
+    <div class="row">
+        <h2>Informations pour étudiant</h2>
+    <div class="row">
+        <div class="col col-md-6 mb-3" >
+            <input  class="form-control" formControlName="matricule">
+        </div>
+        <div class="col col-md-6 mb-3">
+            <input  class="form-control" formControlName="firstName">
+        </div>
+    </div>    
+   <div class="row">
+    <div class="col col-md-6 mb-3">
+        <input  class="form-control" formControlName="lastName">
+    </div>
+    <div class="col col-md-6 mb-3">
+        <input  class="form-control" formControlName="gender">
+    </div>
+   </div>
+</div>
+</form>
+<hr/>
+<div class="row">
+    <div class="col col-md-4 mb-3" >
+        <label>Heure Debut</label>
+        <select class="form-select " formControlName="dateDebut" >
+            <option selected>Choisir</option>
+            <option *ngFor="let temp of temps" >{{temp|convertTime}}</option>
+        </select>
+    </div>
+    <div class="col col-md-4 mb-3" >
+        <label>Heure fin</label>
+        <select class="form-select " formControlName="dateFin" >
+        <option selected>Choisir</option>
+        <option *ngFor="let temp of temps" >{{temp|convertTime}}</option>
+        </select>
+    </div>
+    <div class="col col-md-4 mb-3" >
+        <label>Date d'absence</label>
+        <input type="date"  class="form-control" formControlName="dateAssiduite" >
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-4 mb-3" >
+        <label>Type</label>
+        <select type="date"  class="form-control" formControlName="type" >
+        <option selected>Choisir type</option>    
+        <option value="retard">retard</option>
+        <option value="absence">absence</option> 
+        </select>   
+    </div>
+
+    <div class="col col-md-4 mb-3">
+        <label>Motif*</label>
+        <input  class="form-control" formControlName="motif" >
+    </div>
+
+    <div class="col col-md-4 mb-3">
+        <label>Condition à tenir</label>
+        <textarea  class="form-control" formControlName="conditionTenir" >
+        </textarea>
+    </div>
+</div>
+   <button class="btn btn-success" type="submit">Ajouter</button> 
+
+</form> 
