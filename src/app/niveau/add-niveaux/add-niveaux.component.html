@@ -1,0 +1,26 @@
+<h1>Ajouter niveau</h1>
+<form [formGroup]="niveauForme" (ngSubmit)="addLevel()">
+<div class="row">
+<div class="col col-md-4">
+    <div class="form-group">
+        <label>Libellé:</label>
+        <input class="form-control" formControlName="libelle">
+    </div>
+</div>
+<div class="col col-md-4">
+    <div class="form-group">
+        <label>Option:</label>
+        <input class="form-control" formControlName="option">
+    </div>
+</div>
+<div class="col col-md-4">
+    <div class="form-group">
+        <label>Capacité:</label>
+        <input class="form-control" type="number" formControlName="capacite">
+    </div>
+</div>
+
+</div>
+<button type="submit" class="btn btn-success mt-3">Ajouter</button>
+
+</form>

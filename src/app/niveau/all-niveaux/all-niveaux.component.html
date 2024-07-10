@@ -1,0 +1,48 @@
+<h1>Liste des niveaux</h1>
+<div class="row">
+<div class="col col-md-6">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Ord</th>
+            <th scope="col">Libelle</th>
+            <th scope="col">Option</th>
+            <th scope="col">Capacité</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let niveau of niveaux;let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{niveau.libelle}}</td>
+            <td>{{niveau.option}}</td>
+            <td>{{niveau.capacite}}</td>
+            <td><button (click)="goToUpdate(niveau)">update</button> <button (click)="deleteLevel(niveau)" >delete</button></td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="col col-md-6">
+
+</div>
+
+</div>

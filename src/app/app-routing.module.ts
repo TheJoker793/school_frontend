@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path:"parents",
     loadChildren:()=>import('./parent/parent.module').then(p=>p.ParentModule)
+  },
+  {
+    path:"classes",
+    loadChildren:()=>import('./classe/classe.module').then(c=>c.ClasseModule)
   }
   
 ];

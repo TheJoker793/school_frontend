@@ -56,7 +56,7 @@ export interface Classe{
   id?:number,
   name:string,
   niveauId:string,
-  emploiId:number
+  //emploiId:number
 }
 export interface Niveau{
   id?:number,
