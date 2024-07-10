@@ -1,1 +1,38 @@
-<p>update-diplome works!</p>
+<h1>Mettre à jour diplome</h1>
+<form class="form-group" [formGroup]="diplomeForme" (ngSubmit)="confirmUpdate()">
+    <input id="professeurIdId" class="form-control mb-3">
+
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Nom diplome</label>
+            <input class="form-control" formControlName="name" />
+        </div>
+        <div class="col col-md-6">
+            <label>Ecole</label>
+            <input class="form-control" formControlName="ecole" />
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Date obtenir</label>
+            <input type="date" class="form-control" formControlName="dateObtenir" />
+        </div>
+        <div class="col col-md-6">
+            <label>Niveau</label>
+            <select class="form-select" aria-label="Default select example" formControlName="niveau">
+                <option selected>Open this select menu</option>
+                <option value="Licence Applique">Licence Applique</option>
+                <option value="Licence Fondamental">Licence Fondamental</option>
+                <option value="Master professionnel">Master professionnel</option>
+                <option value="Master Recherche">Master Recherche</option>
+                <option value="Maitrise">Maitrise</option>
+                <option value="Ingenieurie">Ingenieurie</option>
+                <option value="Doctorat">Doctorat</option>
+              </select>
+        </div>
+        
+    </div>
+
+
+</form>

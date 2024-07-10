@@ -24,7 +24,7 @@ export class UpdateAssiduiteComponent implements OnInit{
       type:new FormControl(''),
       motif:new FormControl(''),
       conditionTenir:new FormControl(''),
-      studentId:new FormControl(null)
+      studentId:new FormControl(null) 
 
     })
 
@@ -35,7 +35,7 @@ export class UpdateAssiduiteComponent implements OnInit{
       this.assiduiteService.getAssiduiteById(this.assiduiteId).subscribe(
         (data)=>{
           console.log(data);
-          
+           
           this.assiduiteForme=this.fb.group({
             id:new FormControl(data.id),
             dateDebut:new FormControl(data.dateDebut),
