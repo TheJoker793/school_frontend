@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-update-classe',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './update-classe.component.css'
 })
 export class UpdateClasseComponent {
+  
 
 }

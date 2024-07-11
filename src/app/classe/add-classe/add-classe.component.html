@@ -1,1 +1,19 @@
-<p>add-classe works!</p>
+<h1>Ajouter nouvelle classe</h1>
+<form [formGroup]="classForm" (ngSubmit)="ajouterClasse()">
+    <div class="row">
+        <div class="col col-md-6">
+            <label class="label">Libelle</label>
+            <input class="form-control" formControlName="name">
+        </div>
+        <div class="col col-md-6">
+            <label class="label">Choisir niveau</label>
+            <select class="form-select" aria-label="Default select example" formControlName="niveauId">
+                <option selected>choisir niveau</option>
+                <option *ngFor="let niveau of niveaux" [value]="niveau.id">{{niveau.libelle}}</option>
+            </select>
+
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary mt-3" (click)="ajouterClasse()">Ajouter</button>
+
+</form>

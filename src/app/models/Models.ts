@@ -56,7 +56,6 @@ export interface Classe{
   id?:number,
   name:string,
   niveauId:string,
-  //emploiId:number
 }
 export interface Niveau{
   id?:number,
@@ -67,7 +66,7 @@ export interface Niveau{
 export interface Matiere{
   id?:number,
   name:string
-}
+} 
 export interface Salle{
   id?:number,
   numero:string,
