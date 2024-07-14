@@ -1,0 +1,72 @@
+<h1>Ajouter nouveau réglement</h1>
+<form [formGroup]="reglementForm" (ngSubmit)="addReglement()">
+    <div class="row">
+    <div class="col col-md-6">
+        <label class="label">Identifiant étudiant</label>
+        <input class="form-control" id="studentId" (change)="onChangeStudentId($event)">
+    </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="studentForm">
+            <div class="row">
+            <div class="col col-md-4">
+                <label class="label">Matricule</label>
+                <input class="form-control" formControlName="matricule">
+            </div>
+            <div class="col col-md-4">
+                <label class="label">Prènom</label>
+                <input class="form-control" formControlName="firstName" >
+            </div><div class="col col-md-4">
+                <label class="label">Nom</label>
+                <input class="form-control" formControlName="lastName" >
+            </div>
+        </div>
+
+        </form>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Date Réglement</label>
+                <input class="form-control" type="date" formControlName="dateReglement">
+            </div>
+            <div class="col col-md-6">
+                <label>Date echéance</label>
+                <input class="form-control" type="date" formControlName="dateEcheance">
+            </div>
+
+        </div>
+        <div class="row">
+        <div class="col col-md-4">
+            <label class="label">Montant</label>
+            <input class="form-control" formControlName="montant">
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Mode Paiement</label>
+            
+            <select class="form-select" formControlName="modePaiement" aria-label="Default select example">
+                <option selected>Choisir le mode du paiement</option>
+                <option value="espéce">Espéce</option>
+                <option value="chéque">Chéque</option>
+                <option value="cb">Carte banquaire</option>
+              </select>
+
+
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Mois:</label>
+            <select class="form-select" formControlName="moisRegler" aria-label="Default select example">
+                <option selected>Selectionner le mois</option>
+                <option *ngFor="let m of mois" [value]="m">{{m}}</option>
+                
+              </select>
+
+
+
+        </div>
+       </div>
+        
+    </div>
+<button class="btn btn-primary mt-3" type="submit">Ajouter</button>
+
+</form>

@@ -1,1 +1,22 @@
-<p>all-seasons works!</p>
+<h1>Liste des étudiants par saison scolaire </h1>
+<button class="btn btn-primary mt-3"> Ajouter</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Date début</th>
+        <th scope="col">Date fin</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let saison of seasons; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{saison.dateDebut}}</td>
+        <td>{{saison.dateFin}}</td>
+        
+      </tr>
+      
+      
+    </tbody>
+  </table>

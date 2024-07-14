@@ -1,1 +1,19 @@
-<p>update-classe works!</p>
+<h1>Mettre à jour une classe</h1>
+<form  [formGroup]="classForm" (ngSubmit)="confirmUpdate()">
+    <div class="row" >
+        <div class="col col-md-6">
+            <label class="label">Libelle</label>
+            <input class="form-control" formControlName="name">
+        </div>
+        <div class="col col-md-6">
+            <label class="label">Choisir niveau</label>
+            <select class="form-select" aria-label="Default select example" (change)="onChange($event)" formControlName="niveauId">
+                <option selected>choisir niveau</option>
+                <option *ngFor="let niveau of niveaux" [value]="niveau.id" >{{niveau.libelle}} </option>
+            </select>
+
+        </div>
+    </div>
+    <button type="submit"  class="btn btn-primary mt-3" >Mettre à jour</button>
+
+</form>

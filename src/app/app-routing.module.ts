@@ -23,6 +23,14 @@ const routes: Routes = [
   {
     path:"classes",
     loadChildren:()=>import('./classe/classe.module').then(c=>c.ClasseModule)
+  },
+  {
+    path:"salles",
+    loadChildren:()=>import('./salle/salle.module').then(s=>s.SalleModule)
+  },
+  {
+    path:'reglements',
+    loadChildren:()=>import('./reglement/reglement.module').then(r=>r.ReglementModule)
   }
   
 ];

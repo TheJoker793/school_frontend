@@ -11,7 +11,10 @@ const routes: Routes = [
     path:'',
     component:MainStudentComponent,
     children:[
-      
+      {
+        path:'season',
+        loadChildren:()=>import('../season/season.module').then(s=>s.SeasonModule)
+      },
       
       {
         path:'add',

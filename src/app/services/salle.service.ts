@@ -10,19 +10,19 @@ export class SalleService {
 
   constructor(private http:HttpClient) { }
 
-  getAllMatieres(){
+  getAlSalles(){
     return this.http.get<Salle[]>(environment.baseUrl+'Salles/');
   }
-  getMatiereById(id:number){
+  getSalleById(id:number){
     return this.http.get<Salle>(environment.baseUrl+'Salles/'+id)
   }
-  addMatiere(salle:Salle){
+  addSalle(salle:Salle){
     return this.http.post<Salle>(environment.baseUrl+'Salles/',salle)
   }
-  updateMatiere(id:number,salle:Salle){
+  updateSalle(id:number,salle:Salle){
     return this.http.put<Salle>(environment.baseUrl+'Salles/'+id,salle)
   }
-  deleteMatiere(id:any){
+  deleteSalle(id:any){
     return this.http.delete(environment.baseUrl+'Salles/'+id)
   }
 

@@ -109,6 +109,7 @@ export interface AnneeScolaire{
 }
 export interface Reglement{
   id?:number,
+  montant:number,
   dateReglement:Date,
   modePaiement:string,
   dateEcheance:Date,

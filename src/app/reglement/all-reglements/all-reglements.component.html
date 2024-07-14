@@ -1,0 +1,34 @@
+<h1>Liste des réglements</h1>
+<button class="btn btn-primary mb-3"(click)="goAdd()">Ajouter nouveau réglement</button>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Matricule</th>
+        <th scope="col">Prénom+nom</th>
+        <th scope="col">Date réglement</th>
+        <th scope="col">Montant</th>
+        <th scope="col">Mode paiement</th>
+        <th scope="col">Date écheance</th>
+        <th scope="col">Moin Régler</th>
+        <th scope="col">Action</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reg of reglements;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>matricule</td>
+        <td>Nom+prenom</td>
+        <td>{{reg.dateReglement}}</td>
+        <td>{{reg.montant}}</td>
+        <td>{{reg.modePaiement}}</td>
+        <td>{{reg.dateEcheance}}</td>
+        <td>{{reg.moisRegler}}</td>
+        <td><button (click)="goUpdate(reg)">update</button> <button (click)="deleteReglement(reg)">supprimer</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>

@@ -1,0 +1,15 @@
+<h1>Mise à jour Salle</h1>
+<form [formGroup]="SalleForm" (ngSubmit)="confirmationUpdate()"  class="form-group">
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Numero:</label>
+            <input class="form-control" formControlName="numero">
+        </div>
+        <div class="col col-md-6">
+            <label>Capacité:</label>
+            <input class="form-control" formControlName="capacite" type="number">
+        </div>
+
+    </div>
+<button class="btn btn-success mt-3" type="submit">Mettre à jour</button>
+</form>

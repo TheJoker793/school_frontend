@@ -1,0 +1,21 @@
+<h1>Liste des salles</h1>
+<button class="btn btn-primary" (click)="goAdd()">Ajouter nouvelle salle</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Num Salle</th>
+        <th scope="col">Capacité</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let salle of salles;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{salle.numero}}</td>
+        <td>{{salle.capacite}}</td>
+        <td><button (click)="goUpdate(salle)">update</button> <button (click)="Delete(salle)">delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
