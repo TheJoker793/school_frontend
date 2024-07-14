@@ -1,1 +1,58 @@
-<p>update-reglement works!</p>
+<h1>Mise à jour Réglement</h1>
+
+<form [formGroup]="reglementForm" (ngSubmit)="confirmUpdate()">
+    <div class="row">
+    <div class="col col-md-6">
+        <label class="label">Identifiant étudiant</label>
+        <input class="form-control" formControlName="studentId" >
+    </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Date Réglement</label>
+                <input class="form-control" type="date" formControlName="dateReglement">
+            </div>
+            <div class="col col-md-6">
+                <label>Date echéance</label>
+                <input class="form-control" type="date" formControlName="dateEcheance">
+            </div>
+
+        </div>
+        <div class="row">
+        <div class="col col-md-4">
+            <label class="label">Montant</label>
+            <input class="form-control" formControlName="montant">
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Mode Paiement</label>
+            
+            <select class="form-select" formControlName="modePaiement" aria-label="Default select example">
+                <option selected>Choisir le mode du paiement</option>
+                <option value="espéce">Espéce</option>
+                <option value="chéque">Chéque</option>
+                <option value="cb">Carte banquaire</option>
+              </select>
+
+
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Mois:</label>
+            <select class="form-select" formControlName="moisRegler" aria-label="Default select example">
+                <option selected>Selectionner le mois</option>
+                <option *ngFor="let m of mois" [value]="m">{{m}}</option>
+                
+              </select>
+
+
+
+        </div>
+       </div>
+        
+    </div>
+<button class="btn btn-primary mt-3" type="submit">Modifier</button>
+
+</form>

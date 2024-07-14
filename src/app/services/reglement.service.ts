@@ -19,7 +19,7 @@ export class ReglementService {
     return this.http.post<Reglement>(environment.baseUrl+'Reglements/',reglement);
   }
   updateReglement(id:number,reglement:Reglement){
-    return this.http.post<Reglement>(environment.baseUrl+'Reglements/'+id,reglement);
+    return this.http.put<Reglement>(environment.baseUrl+'Reglements/'+id,reglement);
   }
   deleteReglement(id:number){
     return this.http.delete(environment.baseUrl+'Reglements/'+id);
