@@ -1,1 +1,42 @@
-<p>update-frais works!</p>
+<h1>Mise à jour Frais</h1>
+<form [formGroup]="fraisForm" (ngSubmit)="confirmUpdate()">
+    <div class="row">
+        <div class="col col-md-4">
+            <label class="label">Reglement</label>
+            <input class="form-control" type="number" formControlName="reglementId">
+        </div>
+        <div class="col col-md-4">
+            <label >Type</label>
+            <select class="form-select" aria-label="Default select example" formControlName="type">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Niveau</label>
+            <select class="form-select" aria-label="Default select example" formControlName="niveauId">
+                <option selected>Selectionner le niveau</option>
+                <option *ngFor="let n of niveaux" [value]="n.id">{{n.libelle}}</option>
+                
+              </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-4">
+            <label>Frais1</label>
+            <input class="form-control" type="number" formControlName="frais1">
+        </div>
+        <div class="col col-md-4">
+            <label>Frais2</label>
+            <input class="form-control" type="number" formControlName="frais2">
+        </div>
+        <div class="col col-md-4">
+            <label>Frais3</label>
+            <input class="form-control" type="number" formControlName="frais3">
+        </div>
+    </div>
+<button type="submit" class="btn btn-success mt-3">Méttre à jour</button>
+</form>

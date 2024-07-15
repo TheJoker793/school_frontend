@@ -15,7 +15,7 @@ export class FraisService {
   getFraisById(id:number){
     return this.http.get<Frais>(environment.baseUrl+'Frais/'+id)
   }
-  addFrais(frais:Frais){
+  addFrais(frais:Frais){    
     return this.http.post<Frais>(environment.baseUrl+'Frais/',frais)
   }
   updateFrais(id:number,frais:Frais){

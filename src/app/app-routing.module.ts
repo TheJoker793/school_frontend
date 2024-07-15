@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path:'reglements',
     loadChildren:()=>import('./reglement/reglement.module').then(r=>r.ReglementModule)
+  },
+  {
+    path:'frais',
+    loadChildren:()=>import('./frais/frais.module').then(f=>f.FraisModule)
   }
   
 ];

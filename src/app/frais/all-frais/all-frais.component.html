@@ -1,1 +1,30 @@
-<p>all-frais works!</p>
+<h1>Liste des frais</h1>
+<button class="btn btn-primary" (click)="goAdd()">Nouveau frais </button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Reglement</th>
+        <th scope="col">Niveau</th>
+        <th scope="col">Type</th>
+        <th scope="col">Frais 1</th>
+        <th scope="col">Frais 2</th>
+        <th scope="col">Frais 3</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of frais;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{f.reglementId}}</td>
+        <td>{{f.niveauId}}</td>
+        <td>{{f.type}}</td>
+        <td>{{f.frais1}}</td>
+        <td>{{f.frais2}}</td>
+        <td>{{f.frais3}}</td>
+        <td><button (click)="goUpdate(f)">update</button> <button (click)="deleteFrais(f)" >delete</button></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
