@@ -4,11 +4,13 @@ import { StudentService } from '../../services/student.service';
 import { Router } from '@angular/router';
 import { PreviousSchool } from '../../models/Models';
 import { PreviousShoolService } from '../../services/previous-shool.service';
+import { StudentClassComponent } from '../student-class/student-class/student-class.component';
 
 @Component({
   selector: 'app-add-student',
   templateUrl: './add-student.component.html',
-  styleUrl: './add-student.component.css'
+  styleUrl: './add-student.component.css',
+  
 })
 export class AddStudentComponent implements OnInit {
   schools:PreviousSchool[]=[];
@@ -21,7 +23,9 @@ export class AddStudentComponent implements OnInit {
   addressControle:FormControl;
   pictureControle:FormControl;
   previousSchoolIdControl:FormControl;
-  studentForm:FormGroup
+  studentForm:FormGroup;
+  showParents:boolean=false;
+  showListClass:boolean=false;
   
   constructor(
     fb:FormBuilder,
@@ -65,10 +69,14 @@ export class AddStudentComponent implements OnInit {
 
   addStudent(){
     console.log(this.studentForm.value);
-    
     this.studentService.AddStudent(this.studentForm.value).subscribe(
-      ()=>console.log("student added successfully"));
-      this.router.navigate(["students/list"]);
+      (res)=>{
+        localStorage.setItem("student",JSON.stringify(res.id));
+        this.showParents=true
+      }
+    )
+    //this.router.navigate(["students/add/parents"]);    
   }
+  
 
 }

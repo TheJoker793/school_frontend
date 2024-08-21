@@ -15,6 +15,9 @@ export class ParentService {
   getParentById(id:number){
     return this.http.get<Parent>(environment.baseUrl+'Parents/'+id);
   }
+  getParentByCin(cin:string){
+    return this.http.get<Parent>(environment.baseUrl+'Parents/cin/'+cin)
+  }
   addParent(parent:Parent){
     return this.http.post<Parent>(environment.baseUrl+'Parents/',parent);
   }

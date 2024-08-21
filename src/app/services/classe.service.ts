@@ -12,6 +12,10 @@ export class ClasseService {
   getAllClasse(){
     return this.http.get<Classe[]>(environment.baseUrl+'Classes/');
   }
+  getClasseByNiveau(niveau:number){
+    return this.http.get<Classe[]>(environment.baseUrl+`Classes/niveau/${niveau}`);
+  }
+  
   getClasseById(id:number){
     return this.http.get<Classe>(environment.baseUrl+'Classes/'+id);
   }

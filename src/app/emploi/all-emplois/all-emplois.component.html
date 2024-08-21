@@ -1,1 +1,30 @@
-<p>all-emplois works!</p>
+  <h2>Liste des Emplois</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Heure Début</th>
+        <th>Heure Fin</th>
+        <th>Salle ID</th>
+        <th>Professeur ID</th>
+        <th>Discipline ID</th>
+        <th>Classe ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emploi of emplois">
+        <td>{{ emploi.id }}</td>
+        <td>{{ emploi.heureDebut }}</td>
+        <td>{{ emploi.heureFin }}</td>
+        <td>{{ emploi.salleId }}</td>
+        <td>{{ emploi.professeurId }}</td>
+        <td>{{ emploi.disciplineId }}</td>
+        <td>{{ emploi.classeId }}</td>
+        <td>
+          <button [routerLink]="['/emplois/update', emploi.id]">Modifier</button>
+          <button (click)="deleteEmploi(emploi)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

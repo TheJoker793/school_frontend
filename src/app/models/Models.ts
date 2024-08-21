@@ -34,7 +34,6 @@ export interface Parent{
   firstName:string,
   lastName:string,
   dateOfBirth:Date,
-  typeParently:string,
   place:string,
   function:string,
   mobile:string
@@ -42,7 +41,8 @@ export interface Parent{
 export interface parentStudent{
   id?:number,
   parentId:number,
-  studentId:number
+  studentId:number,
+  lienParente:string
 }
 export interface Diplome{
   id?:number,

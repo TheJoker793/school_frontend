@@ -1,0 +1,25 @@
+<div class="Container">
+
+    <form class="form-group" [formGroup]="lienForm">
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Cin:</label>
+                <input id="cin" class="form-control" (change)="onChange($event)">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Nom Complet</label>
+                <input class="form-control" [value]="fullNameParent">
+            </div>
+            <div class="col col-md-6">
+                <label>Lien de parente</label>
+                <select class="form-select" formControlName="lienParente" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option *ngFor="let lien of liens" [value]="lien">{{lien}}</option>                 
+                  </select>           
+            </div>
+        </div> 
+        <button type="submit" >Enregistrer</button>
+    </form>
+</div>

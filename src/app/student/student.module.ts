@@ -10,6 +10,8 @@ import { DetailStudentComponent } from './detail-student/detail-student.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { SchoolModule } from '../school/school.module';
 import { AssiduiteModule } from '../assiduite/assiduite.module';
+import { StudentParentComponent } from './student-parent/student-parent.component';
+import { StudentClassComponent } from './student-class/student-class/student-class.component';
 
 
 @NgModule({
@@ -19,6 +21,9 @@ import { AssiduiteModule } from '../assiduite/assiduite.module';
     ListStudentComponent,
     UpdateStudentComponent,
     DetailStudentComponent,
+    StudentParentComponent,
+    StudentClassComponent
+
     
   ],
   imports: [
@@ -27,7 +32,8 @@ import { AssiduiteModule } from '../assiduite/assiduite.module';
     StudentRoutingModule,
     ReactiveFormsModule,
     SchoolModule,
-    AssiduiteModule
+    AssiduiteModule,
+
   ]
 })
 export class StudentModule { }

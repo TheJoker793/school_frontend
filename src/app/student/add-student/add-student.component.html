@@ -1,55 +1,70 @@
 <h1>Nouveau Etudiant</h1>
-<form (ngSubmit)="addStudent()" [formGroup]="studentForm" >
-<div>
-    <label class="form-label">Matricule:</label>
-    <input class="form-control" [value]="" formControlName="matricule"/>
+
+<form (ngSubmit)="addStudent()" class="form-group" [formGroup]="studentForm" >
+<div class="row">
+    <div class="col col-md-4">
+        <label class="form-label">Matricule:</label>
+        <input class="form-control"  formControlName="matricule"/>
+    </div>
+    
+    <div class="col col-md-4">
+        <label class="form-label">FirstName:</label>
+        <input class="form-control" formControlName="firstName"/>
+    </div>
+    
+    <div class="col col-md-4">
+        <label class="form-label">LastName:</label>
+        <input class="form-control" formControlName="lastName"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-6">
+        <label class="form-label">Date of birth:</label>
+        <input class="form-control" type="date" formControlName="dateOfBirth"/>
+    </div>
+    <div class="col col-md-6">
+        <label class="form-label">Place:</label>
+        <input class="form-control" formControlName="place"/>
+    </div>
+    
 </div>
 
-<div>
-    <label class="form-label">FirstName:</label>
-    <input class="form-control" formControlName="firstName"/>
+<div class="row">
+    <div class="col-md-6">
+        <label class="form-label">Genre:</label>
+    <select class="form-select" aria-label="Default select example" formControlName="gender">
+        <option selected>Selectionner le genre</option>
+        <option value="male">Male</option>
+        <option value="femelle">Femelle</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Previous school:</label>
+        <select class="form-select" formControlName="previousSchoolId">
+            <option selected>Selectionner l'école</option>
+            <option *ngFor="let school of schools" [value]="school.id">{{school.name}}</option>
+    
+    
+        </select>
+    
+    </div>
+    
+    
+    
 </div>
-
-<div>
-    <label class="form-label">LastName:</label>
-    <input class="form-control" formControlName="lastName"/>
-</div>
-<div>
-    <label class="form-label">Date of birth:</label>
-    <input class="form-control" type="date" formControlName="dateOfBirth"/>
-</div>
-<div>
-    <label class="form-label">Place:</label>
-    <input class="form-control" formControlName="place"/>
-</div>
-<div>
-    <label class="form-label">Genre:</label>
-<select class="form-select" aria-label="Default select example" formControlName="gender">
-    <option selected>Selectionner le genre</option>
-    <option value="male">Male</option>
-    <option value="femelle">Femelle</option>
-  </select>
-</div>
-<div>
+<div class="mb-3">
     <label class="form-label">Address:</label>
-    <input type="text" class="form-control" formControlName="address">
-
-</div>
-<div>
-    <label class="form-label">Previous school:</label>
-    <select class="form-select" formControlName="previousSchoolId">
-        <option selected>Selectionner l'école</option>
-        <option *ngFor="let school of schools" [value]="school.id">{{school.name}}</option>
-
-
-    </select>
+    <textarea rows="2" class="form-control" formControlName="address">
+    </textarea>
 
 </div>
 <div>
     
 </div>
 
-<button class="button" type="submit">Ajouter</button>
+<button class="btn" type="submit">Enregistrer</button>
 
 
 </form>
+<app-student-parent ></app-student-parent>
+<app-student-class ></app-student-class>
