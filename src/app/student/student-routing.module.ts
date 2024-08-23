@@ -35,6 +35,12 @@ const routes: Routes = [
         loadChildren:()=>import('../assiduite/assiduite.module').then(a=>a.AssiduiteModule)
       },
       {
+        path:'reglement',
+        loadChildren:()=>import('../reglement/reglement.module').then(r=>r.ReglementModule)
+      },
+ 
+      
+      {
         path:':id',
         component:DetailStudentComponent
       },

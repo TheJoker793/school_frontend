@@ -39,6 +39,10 @@ const routes: Routes = [
   {
     path:'emplois',
     loadChildren:()=>import('./emploi/emploi.module').then(e=>e.EmploiModule)
+  },
+  {
+    path:'matiere',
+    loadChildren:()=>import('./matiere/matiere.module').then(m=>m.MatiereModule)
   }
   
 ];

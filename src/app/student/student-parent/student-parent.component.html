@@ -1,6 +1,6 @@
 <div class="Container">
 
-    <form class="form-group" [formGroup]="lienForm">
+    <form class="form-group" [formGroup]="lienForm" (ngSubmit)="submitParent()">
         <div class="row">
             <div class="col col-md-6">
                 <label>Cin:</label>

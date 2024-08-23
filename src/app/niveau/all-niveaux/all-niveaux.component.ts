@@ -33,5 +33,8 @@ export class AllNiveauxComponent implements OnInit {
   goToUpdate(niveau:Niveau){
     this.router.navigate(['classes/niveaux',niveau.id])
   }
+  goAddLevel(){
+    this.router.navigate(['classes/niveaux/add'])
+  }
 
 }

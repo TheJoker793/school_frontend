@@ -21,13 +21,15 @@ export class StudentParentComponent {
    constructor(private parentService:ParentService,
     private parentStudentService:ParentStudentService,fb:FormBuilder){
     this.liens=['Pere','Mere','Oncle','Tante','GrandPere','GrandMere','Frere','Soeur','Autre']
-    this.studentId=Number (localStorage.getItem("student"))
+    this.studentId=Number (localStorage.getItem("student"));
+    console.log("studentId: "+this.studentId);
+    
     this.parentControl=fb.control(null);
     this.studentControl=fb.control(null);
     this.lienParenteControl=fb.control('')  
     this.lienForm=fb.group({
         parentId:this.parentControl,
-        studentId:this.studentControl,
+        studentId:this.studentId,
         lienParente:this.lienParenteControl
       })
   } 
@@ -36,15 +38,21 @@ export class StudentParentComponent {
     this.parentService.getParentByCin(this.cin).subscribe(
       (res)=>{
         this.fullNameParent=res.firstName+' '+res.lastName;
-        this.parentId=res.id
+        this.parentId=res.id;
+        console.log("parentId: ",this.parentId);
+        this.lienForm.patchValue({parentId:this.parentId})
+        
       }
     )
    }
    onChange(event:any){
     this.cin=event.target.value;
     this.getFullNameParent();
+    
    }
    submitParent(){
+    console.log(this.lienForm.value);
+    
     this.parentStudentService.addParentStudents(this.lienForm.value).subscribe()
    }
 

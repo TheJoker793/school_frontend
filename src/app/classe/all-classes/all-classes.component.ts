@@ -36,6 +36,9 @@ export class AllClassesComponent implements OnInit{
       }
     )
 }
+goLevel(){
+  this.router.navigate(['classes/niveaux'])
+}
 
 
 

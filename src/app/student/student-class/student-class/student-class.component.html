@@ -1,4 +1,4 @@
-<form class="form-group" [formGroup]="FormClassStudent">
+<form class="form-group" [formGroup]="FormClassStudent" (ngSubmit)="inscrire()">
     <h2>Inscription</h2>
 <div class="row">
     <div class="col col-md-6">
@@ -14,19 +14,19 @@
 <div class="row">
     <div class="col col-md-6">
         <label class="label">Niveau</label>
-        <select class="form-select" aria-label="Default select example">
+        <select (change)="onChangeNiveau($event)" class="form-select" aria-label="Default select example">
             <option selected>Choisir le niveau</option>
-            <option *ngFor="let niveau of niveax" id="niveauId" [value]="niveau.id">{{niveau.libelle}}</option>
+            <option *ngFor="let niveau of niveax" id="niveauId"  [value]="niveau.id">{{niveau.libelle}}</option>
           </select>
     </div>
     <div class="col col-md-6">
         <label class="label">Classe</label>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" (change)="onChangeClasse($event)" aria-label="Default select example">
             <option selected>Choisir la classe</option>
             <option *ngFor="let classe of classes" id="classeId" [value]="classe.id" >{{classe.name}}</option>
           </select>
     </div>
     
 </div>
-<button class="btn" (click)="inscrire()">Terminer insription</button>
+<button class="btn" type="submit">Terminer insription</button>
 </form>

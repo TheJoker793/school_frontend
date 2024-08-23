@@ -22,5 +22,8 @@ export class MainStudentComponent {
   goToDiscipline(){
     this.router.navigate(['students/discipline'])
   }
+  goReglement(){
+    this.router.navigate(['students/reglement'])
+  }
 
 }
