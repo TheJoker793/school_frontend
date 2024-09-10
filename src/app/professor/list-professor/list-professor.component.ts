@@ -14,8 +14,11 @@ export class ListProfessorComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.refresh()
+  }
+  refresh(){
     this.professorService.getAllProfessors().subscribe(
-      (data:Professor[])=>{
+      (data)=>{
         this.professors=data;
       }
     )

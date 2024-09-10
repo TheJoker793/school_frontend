@@ -17,16 +17,21 @@ const routes: Routes = [
     loadChildren:()=>import('./professor/professor.module').then(pm=>pm.ProfessorModule)
   },
   {
+    path:'saisons',
+    loadChildren:()=>import('./saison/saison.module').then(s=>s.SaisonModule)
+    
+  },
+  {
     path:"parents",
     loadChildren:()=>import('./parent/parent.module').then(p=>p.ParentModule)
   },
   {
     path:"classes",
-    loadChildren:()=>import('./classe/classe.module').then(c=>c.ClasseModule)
+    loadChildren:()=>import('./Admin/classe/classe.module').then(c=>c.ClasseModule)
   },
   {
     path:"salles",
-    loadChildren:()=>import('./salle/salle.module').then(s=>s.SalleModule)
+    loadChildren:()=>import('./Admin/salle/salle.module').then(s=>s.SalleModule)
   },
   {
     path:'reglements',
@@ -42,7 +47,7 @@ const routes: Routes = [
   },
   {
     path:'matiere',
-    loadChildren:()=>import('./matiere/matiere.module').then(m=>m.MatiereModule)
+    loadChildren:()=>import('./Admin/matiere/matiere.module').then(m=>m.MatiereModule)
   }
   
 ];

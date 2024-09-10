@@ -20,8 +20,8 @@
     <tbody>
       <tr *ngFor="let reg of reglements;let i=index">
         <th scope="row">{{i+1}}</th>
-        <td>matricule</td>
-        <td>Nom+prenom</td>
+        <td>{{reg.matriculeStudent}}</td>
+        <td>{{reg.prenomStudent+' '+reg.nomStudent }}</td>
         <td>{{reg.dateReglement}}</td>
         <td>{{reg.montant}}</td>
         <td>{{reg.modePaiement}}</td>

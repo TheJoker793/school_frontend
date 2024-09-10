@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ParentService } from '../../services/parent.service';
 import { ParentStudentService } from '../../services/parent-student.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -9,9 +9,10 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrl: './student-parent.component.css'
 })
 export class StudentParentComponent {
+  
   cin!:string;
   fullNameParent:string="";
-  studentId:number;
+  @Input() studentId?:number;
   parentId?:number; 
   liens:string[];
   studentControl:FormControl;
@@ -21,7 +22,6 @@ export class StudentParentComponent {
    constructor(private parentService:ParentService,
     private parentStudentService:ParentStudentService,fb:FormBuilder){
     this.liens=['Pere','Mere','Oncle','Tante','GrandPere','GrandMere','Frere','Soeur','Autre']
-    this.studentId=Number (localStorage.getItem("student"));
     console.log("studentId: "+this.studentId);
     
     this.parentControl=fb.control(null);

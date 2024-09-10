@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { StudentService } from '../../services/student.service';
 import { Router } from '@angular/router';
@@ -13,6 +13,8 @@ import { StudentClassComponent } from '../student-class/student-class/student-cl
   
 })
 export class AddStudentComponent implements OnInit {
+  showParent:boolean=false;
+  @Output() studentId?:number;
   schools:PreviousSchool[]=[];
   matriculeControle:FormControl
   FirstNameControle:FormControl;
@@ -71,8 +73,7 @@ export class AddStudentComponent implements OnInit {
     console.log(this.studentForm.value);
     this.studentService.AddStudent(this.studentForm.value).subscribe(
       (res)=>{
-        localStorage.setItem("student",JSON.stringify(res.id));
-        this.showParents=true
+        this.studentId=res.id
       }
     )
     //this.router.navigate(["students/add/parents"]);    

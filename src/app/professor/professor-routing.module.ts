@@ -12,6 +12,11 @@ const routes: Routes = [
     component:MainProfessorComponent,
     children:[
       {
+        path:'',
+        pathMatch:'full',
+        redirectTo:'list'
+      },
+      {
         path:'add',
         component:AddProfessorComponent
       },

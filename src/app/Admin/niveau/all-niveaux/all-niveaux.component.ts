@@ -1,0 +1,40 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Niveau } from '../../../models/Models';
+import { NiveauService } from '../../../services/niveau.service';
+
+@Component({
+  selector: 'app-all-niveaux',
+  templateUrl: './all-niveaux.component.html',
+  styleUrl: './all-niveaux.component.css'
+})
+export class AllNiveauxComponent implements OnInit {
+  niveaux:Niveau[]=[]
+  constructor(private niveauService:NiveauService,private router:Router){
+
+  }
+  ngOnInit(): void {
+    this.refresh();
+  }
+  refresh(){
+    this.niveauService.getAllLevel().subscribe(
+      (data)=>{
+        this.niveaux=data;
+      }
+    )
+  }
+  deleteLevel(niveau:any){
+    this.niveauService.deleteLevel(niveau.id).subscribe(
+      ()=>{
+        this.refresh()
+      }
+    )
+  }
+  goToUpdate(niveau:Niveau){
+    this.router.navigate(['classes/niveaux',niveau.id])
+  }
+  goAddLevel(){
+    this.router.navigate(['classes/niveaux/add'])
+  }
+
+}

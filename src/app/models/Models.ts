@@ -103,7 +103,7 @@ export interface Assiduite{
 export interface AnneeScolaire{
   id?:string,
   dateDebut:Date,
-  dateFin:Date,
+  dateFin:Date, 
   studentId:number,
   classeId:number
 }
@@ -114,7 +114,10 @@ export interface Reglement{
   modePaiement:string,
   dateEcheance:Date,
   moisRegler:string,
-  studentId:number
+  studentId:number,
+  matriculeStudent?:string,
+  prenomStudent?:string,
+  nomStudent?:string
 }
 export interface Frais{
   id?:number,
