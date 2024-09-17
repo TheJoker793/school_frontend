@@ -34,7 +34,7 @@ pipeline {
                      // Remove the existing container if it exists
                     bat 'docker ps -a -q --filter name=schoolContainer | findstr . && docker rm -f schoolContainer || echo "No existing container to remove"'
                     // Run the new container
-                    bat 'docker run -d --name schoolContainer -p 8089:80 schoolFrontend:latest'
+                    bat 'docker run -d --name schoolContainer -p 8088:80 frontend-school:latest'
                 }
             }
         }
