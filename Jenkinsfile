@@ -18,7 +18,7 @@ pipeline {
         stage('Tag and push your image') {
             steps {
                 bat 'docker images'  // Débogage: liste toutes les images disponibles
-                bat 'docker tag schoolFrontend:latest channoufi/schoolfrontend:latest'
+                bat 'docker tag frontend-school:latest channoufi/schoolfrontend:latest'
                 bat "docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}"
                 bat 'docker push channoufi/schoolfrontend:latest'
             }
