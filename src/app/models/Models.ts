@@ -33,7 +33,7 @@ export interface Parent{
   cin:string,
   firstName:string,
   lastName:string,
-  dateOfBirth:Date,
+  datOfBirth:Date,
   place:string,
   function:string,
   mobile:string

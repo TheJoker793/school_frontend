@@ -12,9 +12,15 @@ const routes: Routes = [
     component:MainParentComponent,
     children:[
       {
+        path:'',
+        pathMatch:'full',
+        redirectTo:'list',
+
+      },
+      {
         path:'list',
         component:ListParentComponent
-      },
+      }, 
       {
         path:'add',
         component:AddParentComponent

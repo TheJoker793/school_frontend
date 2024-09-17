@@ -1,1 +1,27 @@
-<p>list-parent works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cin</th>
+        <th scope="col">Nom complet</th>
+        <th scope="col">Date Naissance</th>
+        <th scope="col">Lieux</th>
+        <th scope="col">Fonction</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Actions</th>
+    
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of parents;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{p.cin}}</td>
+        <td>{{p.firstName+' '+p.lastName}}</td>
+        <td>{{p.datOfBirth|date}}</td>
+        <td>{{p.place}}</td>
+        <td>{{p.function}}</td>
+        <td>{{p.mobile}}</td>
+        <td><button class="btn" (click)="goUpdate(p)">Modifier</button> <button class="btn" (click)="DeleteParent(p)">Supprimer</button> </td>
+      </tr>
+    </tbody>
+  </table>

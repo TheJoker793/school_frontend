@@ -5,7 +5,6 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { ListStudentComponent } from './list-student/list-student.component';
 import { DetailStudentComponent } from './detail-student/detail-student.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
-import { StudentParentComponent } from './student-parent/student-parent.component';
 
 const routes: Routes = [
   {

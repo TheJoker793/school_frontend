@@ -1,1 +1,38 @@
-<p>add-parent works!</p>
+<h1>Nouveau parent</h1>
+<form class="form-group" [formGroup]="parentForm" (submit)="addNewParent()">
+    <div class="row">
+        <div class="col col-md-4">
+            <label class="label">Cin:</label>
+            <input class="form-control" formControlName="cin">
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Prenom:</label>
+            <input class="form-control" formControlName="firstName">
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Nom:</label>
+            <input class="form-control" formControlName="lastName">
+        </div>   
+    </div>
+    <div class="row">
+        <div class="col col-md-4">
+            <label class="label">Date de naissance</label>
+            <input type="date" class="form-control" formControlName="datOfBirth">
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Lieu</label>
+            <input  class="form-control" formControlName="place">
+        </div>
+        <div class="col col-md-4">
+            <label class="label">Télephone</label>
+            <input  class="form-control" formControlName="mobile">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label class="label">Fonction</label>
+            <input class="form-control" formControlName="function">
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Ajouter</button>
+</form>
